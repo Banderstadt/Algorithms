@@ -6,9 +6,8 @@ function quickSort(arr) {
 		var more = [];
   	for(var i = 0; i < arr.length; i++) {
     	if(arr[i] < pivot) {
-        	less.push(arr[i])
-				}
-				else more.push(arr[i])
+      	less.push(arr[i])
+			} else more.push(arr[i])
 		}
 	 return [...quickSort(less), pivot, ...quickSort(more)];
 }
