@@ -1,4 +1,4 @@
-// Quick Sort algorithm
+// Quick Sort algorithm 1
 function quickSort(arr) {
     if (arr.length <= 1) return arr;
     let pivot = arr[arr.length - 1],
@@ -10,4 +10,15 @@ function quickSort(arr) {
         } else more.push(arr[i])
     }
     return [...quickSort(less), pivot, ...quickSort(more)];
+}
+
+// Quick Sort algorithm 2
+function qsort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+    const [pivot, ...rest] = arr;
+    const left = [], right = [];
+    rest.forEach( el => el < pivot ? left.push(el) : right.push(el) );
+    return [...qsort(left), pivot, ...qsort(right)];
 }
